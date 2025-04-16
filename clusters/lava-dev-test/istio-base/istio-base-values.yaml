@@ -1,0 +1,6 @@
+global:
+  proxy:
+    annotations:
+      app.kubernetes.io/managed-by: "Helm"
+      meta.helm.sh/release-name: "istio-internal-base"
+      meta.helm.sh/release-namespace: "istio-system-internal"

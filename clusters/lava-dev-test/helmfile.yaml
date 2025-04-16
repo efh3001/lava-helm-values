@@ -1,0 +1,17 @@
+repositories:
+- name: istio
+  url: https://istio-release.storage.googleapis.com/charts
+
+releases:
+- name: istiod-internal
+  namespace: istio-system
+  chart: istio/istiod
+  version: 1.25.1
+  values:
+     - "./istiod/values.yaml"
+- name: istio-ingressgateway-internal
+  namespace: istio-system
+  chart: istio/gateway
+  version: 1.25.1
+  values:
+    - "./istio-gateway/values.yaml"
