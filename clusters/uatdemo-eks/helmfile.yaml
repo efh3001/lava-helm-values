@@ -1,0 +1,42 @@
+repositories:
+- name: istio
+  url: https://istio-release.storage.googleapis.com/charts
+- name: istio-gateways
+  url: oci://208842056392.dkr.ecr.us-east-1.amazonaws.com/istio-gateways
+  oci: true
+- name: virtual-services
+  url: oci://208842056392.dkr.ecr.us-east-1.amazonaws.com/virtual-services
+  oci: true
+
+  
+
+releases:
+- name: istiod-internal
+  namespace: istio-system
+  chart: istio/istiod
+  version: 1.25.1
+  values:
+     - "./istiod/values.yaml"
+- name: istio-ingressgateway-internal
+  namespace: istio-system
+  chart: istio/gateway
+  version: 1.25.1
+  values:
+    - "./istio-gateway/values.yaml"
+    
+- name: istio-gateways
+  namespace: istio-system
+  chart: oci://208842056392.dkr.ecr.us-east-1.amazonaws.com/istio-gateways
+  version: 0.1.0
+  values:
+    - "./istio-gateway/values.yaml"
+
+- name: virtual-services
+  namespace: lava-uat
+  chart: oci://208842056392.dkr.ecr.us-east-1.amazonaws.com/virtual-services
+  version: 0.1.0
+  values:
+    - "./virtual-services/values.yaml"
+
+
+  
