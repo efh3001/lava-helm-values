@@ -1,0 +1,41 @@
+virtualServices:
+  - name: "adminv2-backdoor"
+    hosts: 
+      - "lava-adminuat.backdoor.lava.landadmin.com"
+    gateways: 
+      - "istio-system/internal-gateway"
+    route:
+      - destination:
+          host: "adminv2"
+          port:
+            number: 80
+  - name: "agentv2-backdoor"
+    hosts: 
+      - "agentuat.backdoor.lava.landadmin.com"
+    gateways: 
+      - "istio-system/internal-gateway"
+    route:
+      - destination:
+          host: "agentv2"
+          port:
+            number: 80
+  - name: "examiner-workbench-backdoor"
+    hosts: 
+      - "workbenchuat.backdoor.lava.landadmin.com"
+    gateways: 
+      - "istio-system/internal-gateway"
+    route:
+      - destination:
+          host: "examiner-workbench"
+          port:
+            number: 80
+  - name: "tenant-adminv2-backdoor"
+    hosts: 
+      - "tenant-adminuat.backdoor.lava.landadmin.com"
+    gateways: 
+      - "istio-system/internal-gateway"
+    route:
+      - destination:
+          host: "tenant-adminv2"
+          port:
+            number: 80

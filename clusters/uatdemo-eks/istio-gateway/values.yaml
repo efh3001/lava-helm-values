@@ -1,6 +1,8 @@
 service:  
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-internal: "true" # Balanceador de carga interno
+autoscaling:
+  minReplicas: 2
 
 env:
   CA_ADDR: istiod-internal.istio-system.svc:15012

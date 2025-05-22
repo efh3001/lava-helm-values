@@ -31,12 +31,22 @@ releases:
   values:
     - "./istio-gateway/values.yaml"
 
-- name: virtual-services
+- name: virtual-services-uat
   namespace: lava-uat
   chart: oci://208842056392.dkr.ecr.us-east-1.amazonaws.com/virtual-services
   version: 0.1.0
   values:
-    - "./virtual-services/values.yaml"
+    - "./virtual-services/values-uat.yaml"
+- name: virtual-services-demo
+  namespace: lava-demo
+  chart: oci://208842056392.dkr.ecr.us-east-1.amazonaws.com/virtual-services
+  version: 0.1.0
+  values:
+    - "./virtual-services/values-demo.yaml"
 
-
-  
+- name: virtual-services-demo2
+  namespace: lava-demo2
+  chart: oci://208842056392.dkr.ecr.us-east-1.amazonaws.com/virtual-services
+  version: 0.1.0
+  values:
+    - "./virtual-services/values-demo2.yaml"  
